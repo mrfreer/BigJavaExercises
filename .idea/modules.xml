@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BigJava.iml" filepath="$PROJECT_DIR$/BigJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BigJavaExercises.iml" filepath="$PROJECT_DIR$/BigJavaExercises.iml" />
     </modules>
   </component>
 </project>
