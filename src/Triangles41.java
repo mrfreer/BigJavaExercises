@@ -60,14 +60,14 @@ public class Triangles41 {
     }
 
     public void angles(){
-        double angle1 = Math.toDegrees(Math.acos((((Math.pow(sides[0], 2) + Math.pow(sides[1], 2) -
+        double angle3 = Math.toDegrees(Math.acos((((Math.pow(sides[0], 2) + Math.pow(sides[1], 2) -
                                 Math.pow(sides[2], 2)) / (2 * sides[0] * sides[1])))));
-        System.out.println(df.format(angle1) + " angle");
+        System.out.println(df.format(angle3) + " angle");
         double angle2 = Math.toDegrees(Math.acos((((Math.pow(sides[1], 2) + Math.pow(sides[2], 2) -
                 Math.pow(sides[0], 2)) / (2 * sides[1] * sides[2])))));
         System.out.println(df.format(angle2) + " angle");
-        double angle3 = (180 - (angle1 + angle2));
-        System.out.println(df.format(angle3) + " angle");
+        double angle1 = (180 - (angle3 + angle2));
+        System.out.println(df.format(angle1) + " angle");
         System.out.println("The three angles equal " + (angle1 + angle2 + angle3));
     }
 
