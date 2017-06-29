@@ -25,7 +25,7 @@ class Person implements Comparable<Person> {
         }
         else{
             return first.compareTo(other.first);
-        }
+        } //cool
 
     }
 
