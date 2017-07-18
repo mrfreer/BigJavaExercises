@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -18,13 +20,13 @@ public class MagicSquares712 {
         }
         boolean isMagicSquare = true;
         int [] colSum = new int[side];
-
+        ArrayList<Integer> ans = new ArrayList<>();
         for(int i = 0; i < side; i++){
             int nextRow = 0;
             for(int j = 0; j < side; j++){
                 nextRow += magicSquare[i][j];
             }
-            colSum[i] = nextRow;
+            ans.add(nextRow);
         }
 
         int rowSum[] = new int[side];
@@ -34,27 +36,43 @@ public class MagicSquares712 {
             for(int j = 0; j < side; j++){
                 nextRow += magicSquare[j][i];
             }
-            rowSum[i] = nextRow;
+            ans.add(nextRow);
+            nextRow = 0;
         }
 
         //check diagonals
         int diagonalSum [] = new int[2];
         int counter = 0;
-        int nextRow = 0;
+
         for(; counter < 2; counter++) {
+            if(counter == 0)
             for (int i = 0; i < side; i++) {
                 nextRow += magicSquare[i][i];
             }
-            diagonalSum[counter] = nextRow;
+            else{
+                for(int i = side - 1; i >= 0; i--){
+                    nextRow += magicSquare[i][i];
+                }
+            }
+
+            ans.add(nextRow);
+            nextRow = 0;
         }
 
-        Arrays.sort(colSum);
-        Arrays.sort(rowSum);
-        Arrays.sort(diagonalSum);
-        int toCheck = colSum[0];
-        for(int i : colSum){
-
+        Collections.sort(ans);
+        for(int i = 0; i < ans.size(); i++){
+            System.out.println(ans.get(i));
         }
+        for(int i = 0; i < ans.size()-1; i++){
+            if(ans.get(i) != ans.get(i+1)){
+                isMagicSquare = false;
+            }
+        }
+
+        System.out.println("Is magic square = " + isMagicSquare);
+
+
+
 
     }
 }
